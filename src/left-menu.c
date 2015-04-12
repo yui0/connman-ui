@@ -36,12 +36,11 @@ static void add_or_update_service(const char *path, int position)
 
 	s = gtk_service_new(path);
 
-	if (position > 9)
-		gtk_menu_shell_append(GTK_MENU_SHELL(cui_more_menu),
-							(GtkWidget *)s);
-	else
-		gtk_menu_shell_insert(GTK_MENU_SHELL(cui_left_menu),
-						(GtkWidget *)s, position);
+	if (position > 9) {
+		gtk_menu_shell_append(GTK_MENU_SHELL(cui_more_menu), (GtkWidget *)s);
+	} else {
+		gtk_menu_shell_insert(GTK_MENU_SHELL(cui_left_menu), (GtkWidget *)s, position);
+	}
 
 	gtk_widget_set_visible((GtkWidget *)s, TRUE);
 	gtk_widget_show((GtkWidget *)s);
@@ -110,7 +109,8 @@ static void cui_popup_left_menu(GtkStatusIcon *trayicon,
 	connman_service_refresh_services_list(get_services_cb,
 							scanning_cb, user_data);
 
-	gtk_menu_popup(cui_left_menu, NULL, NULL, NULL, NULL, 1, 0);
+//	gtk_menu_popup(cui_left_menu, NULL, NULL, NULL, NULL, 1, 0);
+	gtk_menu_popup(cui_left_menu, NULL, NULL, NULL, NULL, 0, /*0*/gtk_get_current_event_time());
 }
 
 static void cui_popdown_left_menu(GtkMenu *menu, gpointer user_data)
