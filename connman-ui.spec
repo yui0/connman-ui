@@ -4,11 +4,11 @@ Group: System Environment/Networking
 Version: 0.1
 License: GPL
 URL: https://github.com/tbursztyka/connman-ui
-Release: b1
+Release: b2
 Source0: %{name}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildArchitectures: i686
-
+#BuildArchitectures: i686
+BuildRequires: automake, autoconf, intltool, libtool, glib2-devel, gtk3-devel
 #BuildRequires: libmesagl-devel
 
 %description
