@@ -1,10 +1,10 @@
 Name: connman-ui
 Summary: A full-featured GTK based trayicon UI for ConnMan
 Group: System Environment/Networking
-Version: 0.1
+Version: 0.2
 License: GPL
 URL: https://github.com/tbursztyka/connman-ui
-Release: b2
+Release: b1
 Source0: %{name}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 #BuildArchitectures: i686
